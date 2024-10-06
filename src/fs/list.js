@@ -2,7 +2,7 @@ import { readdir } from "node:fs/promises";
 import { createFilePath } from "../utils/utils.js";
 import { FP_ERRORMSG as ERRORMSG } from "../utils/constants.js";
 
-const path = await createFilePath(import.meta.url, "files");
+const path = createFilePath(import.meta.url, "files");
 
 const list = async () => {
   try {
