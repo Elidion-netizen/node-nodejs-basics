@@ -4,7 +4,7 @@ import { createFilePath } from "../utils/utils.js";
 const FILEDIR = "files";
 const FILENAME = "fresh.txt";
 const CONTENT = "I am fresh and young";
-const ERRORMSG = "fs operation failed";
+const ERRORMSG = "FS operation failed";
 const flag = "wx";
 
 const path = createFilePath(import.meta.url, FILEDIR, FILENAME);

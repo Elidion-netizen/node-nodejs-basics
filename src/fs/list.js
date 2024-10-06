@@ -1,7 +1,7 @@
 import { readdir } from "node:fs/promises";
 import { createFilePath } from "../utils/utils.js";
 
-const ERRORMSG = "fs operation failed";
+const ERRORMSG = "FS operation failed";
 const path = await createFilePath(import.meta.url, "files");
 
 const list = async () => {
