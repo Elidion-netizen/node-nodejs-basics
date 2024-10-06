@@ -18,7 +18,7 @@ const performCalculations = async () => {
       )
   );
 
-  Promise.allSettled(promises).then(console.log);
+  Promise.all(promises).then(console.log);
 };
 
 await performCalculations();
