@@ -17,8 +17,8 @@ const compress = async () => {
       createGzip(),
       createWriteStream(destPath)
     );
-  } catch {
-    throw new Error(ERRORMSG);
+  } catch (err) {
+    console.error(ERRORMSG, err);
   }
 };
 

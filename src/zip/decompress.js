@@ -17,8 +17,8 @@ const decompress = async () => {
       createGunzip(),
       createWriteStream(destPath)
     );
-  } catch {
-    throw new Error(ERRORMSG);
+  } catch (err) {
+    console.error(ERRORMSG, err);
   }
 };
 
