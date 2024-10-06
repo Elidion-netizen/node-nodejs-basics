@@ -1,5 +1,4 @@
 import { createReadStream, createWriteStream } from "node:fs";
-import { unlink } from "node:fs/promises";
 import { pipeline } from "node:stream/promises";
 import { createGunzip } from "node:zlib";
 import { STREAM_ERRORMSG as ERRORMSG, FILEDIR } from "../utils/constants.js";
@@ -18,7 +17,6 @@ const decompress = async () => {
       createGunzip(),
       createWriteStream(destPath)
     );
-    await unlink(sourcePath);
   } catch {
     throw new Error(ERRORMSG);
   }

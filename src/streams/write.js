@@ -13,6 +13,7 @@ const path = createFilePath(import.meta.url, FILEDIR, FILENAME);
 
 const write = async () => {
   const stream = createWriteStream(path, { encoding });
+
   process.stdin.on("data", (chunk) => {
     stream.write(chunk);
   });

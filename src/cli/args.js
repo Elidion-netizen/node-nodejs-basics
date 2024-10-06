@@ -1,13 +1,12 @@
-const SLICE_NUMBER = 2;
 const PREFIX = "--";
 
 const parseArgs = () => {
   const parsedArgs = [];
 
-  process.argv.slice(SLICE_NUMBER).forEach((arg, index) => {
+  process.argv.forEach((arg, index) => {
     if (arg.startsWith(PREFIX)) {
-      const propName = arg.slice(SLICE_NUMBER);
-      const propValue = process.argv[index + PREFIX.length + 1];
+      const propName = arg.slice(PREFIX.length);
+      const propValue = process.argv[index + 1];
       parsedArgs.push(`${propName} is ${propValue}`);
     }
   });

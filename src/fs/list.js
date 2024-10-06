@@ -6,8 +6,11 @@ const path = createFilePath(import.meta.url, FILEDIR);
 
 const list = async () => {
   try {
-    const items = await readdir(path);
-    console.log(items);
+    const items = await readdir(path, { withFileTypes: true });
+
+    console.log(
+      items.filter((dirent) => dirent.isFile()).map((dirent) => dirent.name)
+    );
   } catch {
     throw new Error(ERRORMSG);
   }
