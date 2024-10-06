@@ -12,9 +12,7 @@ const path = createFilePath(import.meta.url, FILEDIR, FILENAME);
 
 const read = async () => {
   try {
-    const content = await readFile(path, {
-      encoding,
-    });
+    const content = await readFile(path, { encoding });
     console.log(content);
   } catch {
     throw new Error(ERRORMSG);
