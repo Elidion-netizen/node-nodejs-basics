@@ -1,9 +1,8 @@
-import path from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-export const isTrue = () => true;
-export const isFalse = () => false;
+export const toBool = [() => true, () => false];
 
-export const createPathName = (__filename, ...args) => {
-  const name = path.dirname(__filename);
-  return path.join(name, ...args);
+export const createFilePath = (filePath, ...args) => {
+  return join(dirname(fileURLToPath(filePath)), ...args);
 };
